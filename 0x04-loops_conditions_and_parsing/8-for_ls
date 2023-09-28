@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# A bash script that lists contents of the current directory
+my_list="$(ls)"
+for i in $my_list
+do
+	list=$(echo "$i"| cut -d '-' -f 2-)
+	echo "$list"
+done
