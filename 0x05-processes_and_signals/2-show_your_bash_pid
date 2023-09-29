@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#This script displays a lines containing bash/getting the bash processes
+ps -aux --forest | grep bash
