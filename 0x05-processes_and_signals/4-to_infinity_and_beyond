@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script displays text indefinately and sleep for 2 afrer each iteration
+# This script displays "To infinty and beyond" indefinately and sleeps 2secs after each iteration
 while true
 do
     echo "To infinity and beyond"
