@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script kills...beheads 7-highlander *gasp
+pkill -f 7-highlander --signal SIGKILL
