@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#install nginx in my server
+sudo apt update
+sudo apt install -y nginx
+sudo ufw allow 'Nginx HTTPS'
+echo "Hello World!" > /var/www/html/index.html
+sudo service nginx start
