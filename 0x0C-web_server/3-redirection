@@ -5,10 +5,10 @@ sudo apt-get update
 sudo apt-get install -y nginx
 
 # creating an index.html page
-echo "Hello World!" | sudo tee /var/www/html/index.html
+echo "Hello World!" > /var/www/html/index.html
 
-# the 301 Redirection
-string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/besthor permanent;"
-sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+# redirection
+string_to_replace="server_name _;\n\trewrite ^\/redirect_me https:\/\/google.com permanent;"
+sudo sed -i "s/server_name _;/$string_to_replace/" /etc/nginx/sites-enabled/default
 
 sudo service nginx restart
