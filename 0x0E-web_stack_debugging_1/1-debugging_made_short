@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 # Make the fix short and sweet
 
-# Remove default configuration file
-rm /etc/nginx/sites-enabled/default
-
 #Symbolic link enabling site configuration
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
