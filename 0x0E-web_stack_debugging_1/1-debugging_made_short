@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Make the fix short and sweet
-
-#Symbolic link enabling site configuration
-sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 
 #Restart nginx
-sudo service nginx restart
+service nginx restart
 
+# Kill
+kill -9 "$(cat /run/nginx.pid)"
