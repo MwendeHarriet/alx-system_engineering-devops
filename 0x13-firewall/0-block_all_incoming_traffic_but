@@ -4,6 +4,9 @@ sudo ufw status
 # Enable ufw
 suo ufw enable
 
+# Install ufw
+sudo apt install ufw
+
 # Set default to deny all incoming traffic
 sudo ufw default deny incomming
 
