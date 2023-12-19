@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Script configures the web server container to run Nginx as the nginx user,
+# listening on port 8080 and enhancing security by avoiding root privileges.
+
+# Set the nginx user in the Nginx configuration by replacing '#user' and its value
+sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
+
+# Replace port 80 with 8080 in the default site configuration
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+
+# Grant owner permissions to read and write to the Nginx configuration file
+chmod 644 /etc/nginx/nginx.conf
+
+# Check for the presence of Apache and kill its process if running to avoid interference
+pkill apache2
+
+# Start the Nginx service with the specified nginx user
+sudo -u nginx service nginx start
