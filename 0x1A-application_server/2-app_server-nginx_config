@@ -1,0 +1,18 @@
+server {
+    listen 80;
+    listen [::]:80 default_server;
+
+    root /var/www/html/;
+    
+    index index.html;
+
+    server_name web-01.mwendeh.tech;
+
+    location = /airbnb-onepage/ {
+        proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
+    }
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
